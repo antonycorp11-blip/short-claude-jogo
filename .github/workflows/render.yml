@@ -1,0 +1,71 @@
+name: render-short
+on:
+  workflow_dispatch:
+    inputs:
+      scale:
+        description: "Render scale (1 = 1080x1920)"
+        default: "1"
+      title:
+        description: "Output file title"
+        default: "Voce-assinou-o-Claude-parte-1"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    env:
+      SHARDS: 20
+      SCALE: ${{ github.event.inputs.scale || '1' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Install Playwright + Chromium
+        run: |
+          rm -rf node_modules && npm init -y >/dev/null && npm i playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Read TOTAL from web/timeline.js
+        run: |
+          TOTAL=$(grep -o 'total:[ ]*[0-9]*' web/timeline.js | head -1 | sed 's/[^0-9]//g')
+          [ -n "$TOTAL" ] || { echo "no total in timeline.js"; exit 1; }
+          echo "TOTAL=$TOTAL" >> "$GITHUB_ENV"
+      - name: Render frames for this shard
+        run: |
+          per=$(( (TOTAL + SHARDS - 1) / SHARDS ))
+          a=$(( ${{ matrix.shard }} * per )); b=$(( a + per - 1 )); [ $b -ge $TOTAL ] && b=$(( TOTAL - 1 ))
+          echo "shard ${{ matrix.shard }}: frames $a-$b"
+          node render.mjs frames "$a-$b"
+          n=$(ls frames | wc -l); echo "rendered $n"; [ $n -eq $(( b - a + 1 )) ]
+      - uses: actions/upload-artifact@v4
+        with:
+          name: frames-${{ matrix.shard }}
+          path: frames/
+          retention-days: 3
+
+  finish:
+    needs: render
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { pattern: "frames-*", path: frames, merge-multiple: true }
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Encode + QA
+        run: |
+          ls frames | wc -l
+          bash finish.sh "${{ github.event.inputs.title || 'Voce-assinou-o-Claude-parte-1' }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: video
+          path: |
+            out/*.mp4
+            out/qa_sheet.jpg
+            out/voz_limpa.wav
+            out/trilha.wav
+            out/efeitos.wav
+          retention-days: 30
