@@ -27,7 +27,7 @@ jobs:
       - name: Install Playwright + Chromium
         run: |
           rm -rf node_modules && npm init -y >/dev/null && npm i playwright@1.48.2
-          npx playwright install --with-deps chromium
+          for i in 1 2 3; do npx playwright install --with-deps chromium && break; echo "tentativa $i falhou, repetindo"; sleep 15; done
       - name: Read TOTAL from web/timeline.js
         run: |
           TOTAL=$(grep -o 'total:[ ]*[0-9]*' web/timeline.js | head -1 | sed 's/[^0-9]//g')
