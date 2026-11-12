@@ -231,7 +231,7 @@ for i in range(5): place(sfx, pop(500 + 90 * i), F(K['cinco'] - 4 * (4 - i)), .5
 place(sfx, roar(), F(K['dragao']), .75)
 place(sfx, creepy_ding(), F(K['nome']), .55)
 # counter tick-runs
-a5, b5 = SENT[4]; tickrun(F(a5 + 0.2 * (b5 - a5)), 14, lambda i: 0, 0) if False else None
+a5, b5 = SENT[4]
 n5 = 10; s5 = a5 + 0.15 * (b5 - a5); e5 = K['mil']
 for i in range(n5):
     f = s5 + (e5 - s5) * (i / (n5 - 1)) ** 0.9

@@ -117,13 +117,17 @@ function drawScreen(S,f){
  const T=(t,x,y,size=36,c='#e8f6fb',al='left')=>{g.textAlign=al;g.fillStyle=c;g.font=`bold ${size}px Arial`;g.fillText(t,x,y);g.textAlign='left';};
  const ease=t=>t<0?0:t>1?1:1-Math.pow(1-t,3);
  const bubble=(t,x,y,ww,hh,c,tc,size=34)=>{R(x,y,ww,hh,c);const lines=t.split('\n');lines.forEach((l,i)=>T(l,x+24,y+48+i*(size+10),size,tc));};
- const chatFrame=(title)=>{R(0,0,w,h,'#141c2b');R(0,0,w,70,'#22304a');T(title,36,46,26,'#b9cde6');R(0,610,w,70,'#1d2739');R(30,622,760,46,'#2a3650');R(806,622,64,46,'#d9773f');T('➤',820,656,30,'#fff');};
+ const chatFrame=(title)=>{R(0,0,w,h,'#141c2b');R(0,0,w,70,'#22304a');T(title,450,48,32,'#b9cde6','center');R(0,610,w,70,'#1d2739');R(30,622,760,46,'#2a3650');R(806,622,64,46,'#d9773f');T('➤',820,656,30,'#fff');};
  if(sc==='chat'){ // user types the request, AI starts working
   chatFrame('CHAT COM A IA');
   const msg='Cria um jogo pra mim.';const n=Math.floor(msg.length*Math.min(1,S.typing||0));
-  if((S.typing||0)<1){T(msg.slice(0,n)+(f%16<8?'▌':''),48,654,28,'#e8eef8');}
-  else{bubble(msg,360,110,500,90,'#d9773f','#fff',32);
-   const k=ease(S.reply||0);if(k>0){g.globalAlpha=k;bubble('Claro! Gerando seu jogo'+'.'.repeat(1+Math.floor(f/8)%3),40,240,560,90,'#2e3f5c','#e8eef8',30);g.globalAlpha=1;}}
+  if((S.typing||0)<1){ // big prompt box in the middle so the typing reads on a phone
+   T('O que você quer criar?',450,190,44,'#8fa3c2','center');
+   R(80,250,740,130,'#22304a');g.strokeStyle='#d9773f';g.lineWidth=5;g.strokeRect(80,250,740,130);
+   T(msg.slice(0,n)+(f%16<8?'▌':''),110,333,52,'#ffffff');
+   T(msg.slice(0,n),48,654,28,'#e8eef8');}
+  else{bubble(msg,300,120,540,100,'#d9773f','#fff',44);
+   const k=ease(S.reply||0);if(k>0){g.globalAlpha=k;bubble('Claro! Gerando\nseu jogo'+'.'.repeat(1+Math.floor(f/8)%3),70,270,560,150,'#2e3f5c','#e8eef8',44);g.globalAlpha=1;}}
  }
  const stars=()=>{R(0,0,w,h,'#070b1e');for(let i=0;i<60;i++){const x=(i*137)%w,y=((i*251)+f*(2+i%4)*3)%h;R(x,y,i%7?3:5,i%7?3:5,'#cfe3ff');}};
  const ship=(x,y,s=1)=>{g.fillStyle='#7fe0ff';g.beginPath();g.moveTo(x,y-34*s);g.lineTo(x+26*s,y+24*s);g.lineTo(x-26*s,y+24*s);g.closePath();g.fill();R(x-8*s,y+24*s,16*s,10+6*Math.sin(f*.9),'#ffb347');};
@@ -131,12 +135,12 @@ function drawScreen(S,f){
   stars();const sx=450+220*Math.sin(f*.06);ship(sx,560);
   for(let i=0;i<4;i++){const ex=150+i*200+40*Math.sin(f*.05+i),ey=140+30*Math.sin(f*.08+i*2);R(ex-30,ey-18,60,36,'#ff5d7a');R(ex-12,ey+18,24,10,'#ff5d7a');}
   for(let i=0;i<5;i++){const by=520-((f*14+i*90)%420);R(sx-3,by,6,22,'#fff59a');}
-  T('NAVE IA',30,52,30,'#7fe0ff');T('PONTOS '+String(1200+f*7).padStart(6,'0'),560,52,28,'#fff59a');
+  T('NAVE IA',70,60,38,'#7fe0ff');T('PONTOS '+String(1200+f*7).padStart(6,'0'),830,60,36,'#fff59a','right');
  }
  if(sc==='levels'){ // 1 level requested, 5 pop in
-  R(0,0,w,h,'#101a33');T('SELECIONE A FASE',450,90,40,'#ffe27a','center');
+  R(0,0,w,h,'#101a33');T('SELECIONE A FASE',450,110,52,'#ffe27a','center');
   for(let i=0;i<5;i++){const k=ease((S.pops||0)*5-i);if(k<=0)continue;const x=95+i*150,y=300,s=110*k;R(x+55-s/2,y+55-s/2,s,s,['#3fa7ff','#38c98a','#f2b03a','#e2577a','#9b6bff'][i]);if(k>.6)T(String(i+1),x+55,y+75,54,'#fff','center');}
-  if((S.pops||0)>.2)T('Você pediu 1. A IA fez 5.',450,560,32,'#b9cde6','center');
+  if((S.pops||0)>.2)T('Você pediu 1. A IA fez 5.',450,540,46,'#ffffff','center');
  }
  if(sc==='dragon'){ // boss that says your name
   R(0,0,w,h,'#1c0d24');for(let i=0;i<8;i++)R(i*120,600-((i*53)%40),120,80,'#3b1630');
@@ -146,34 +150,35 @@ function drawScreen(S,f){
   g.beginPath();g.moveTo(dx+120,dy-60);g.lineTo(dx+260,dy-160-20*Math.sin(f*.2+1));g.lineTo(dx+60,dy-90);g.fill();
   R(dx-70,dy-40,34,34,'#fff');R(dx+36,dy-40,34,34,'#fff');R(dx-58,dy-30,14,18,'#111');R(dx+48,dy-30,14,18,'#111');
   R(dx-60,dy+40,120,16,'#7a1d2c');
-  if((S.talk||0)>0){bubble('Olá...\nEU SEI SEU NOME.',150,460,600,130,'#fff6d8','#3a1020',40);}
-  T('CHEFÃO FINAL',450,60,34,'#ff8a8a','center');
+  if((S.talk||0)>0){bubble('Olá...\nEU SEI SEU NOME.',120,410,660,150,'#fff6d8','#3a1020',48);}
+  T('CHEFÃO FINAL',450,70,46,'#ff8a8a','center');
  }
  if(sc==='posted'||sc==='viral'){ // player counter racing up
-  R(0,0,w,h,'#0f1f2e');T('JOGO PUBLICADO',450,90,36,'#9fe3b0','center');
+  R(0,0,w,h,'#0f1f2e');
+  if(sc==='viral')for(let i=0;i<30;i++){const x=(i*97+f*5)%w,y=(i*61+f*(6+i%5))%h;g.globalAlpha=.75;R(x,y,10,16,['#ffe27a','#ff5d7a','#7fe0ff','#38c98a'][i%4]);g.globalAlpha=1;}
+  T('JOGO PUBLICADO',450,100,48,'#9fe3b0','center');
   const target=sc==='posted'?1000:100000;const v=Math.floor(target*ease(S.count||0));
-  T('JOGADORES ONLINE',450,230,32,'#b9cde6','center');T(v.toLocaleString('pt-BR'),450,370,sc==='viral'?120:110,sc==='viral'?'#ffe27a':'#ffffff','center');
-  R(120,450,660,30,'#20384d');R(120,450,660*ease(S.count||0),30,sc==='viral'?'#ffb347':'#38c98a');
-  T(sc==='posted'?'1ª hora':'dia seguinte',450,560,32,'#9fb4c8','center');
-  if(sc==='viral')for(let i=0;i<30;i++){const x=(i*97+f*5)%w,y=(i*61+f*(6+i%5))%h;R(x,y,10,16,['#ffe27a','#ff5d7a','#7fe0ff','#38c98a'][i%4]);}
+  T('JOGADORES ONLINE',450,215,42,'#d6e4f2','center');T(v.toLocaleString('pt-BR'),450,370,sc==='viral'?140:130,sc==='viral'?'#ffe27a':'#ffffff','center');
+  R(120,430,660,34,'#20384d');R(120,430,660*ease(S.count||0),34,sc==='viral'?'#ffb347':'#38c98a');
+  T(sc==='posted'?'NA 1ª HORA':'NO DIA SEGUINTE',450,540,46,'#ffffff','center');
  }
  if(sc==='email'){ // offer from a fictional big studio
-  R(0,0,w,h,'#eef1f6');R(0,0,w,70,'#c9d3e2');T('CAIXA DE ENTRADA',36,46,26,'#3a4a63');
-  const k=ease(S.slide||0);const y=120+(1-k)*500;R(50,y,800,440,'#ffffff');g.strokeStyle='#c9d3e2';g.lineWidth=3;g.strokeRect(50,y,800,440);
-  T('De: MEGA GAMES S.A.',80,y+60,30,'#4a5a75');T('Assunto: Proposta urgente',80,y+105,30,'#4a5a75');R(80,y+130,740,3,'#dde3ec');
-  T('Queremos comprar',80,y+215,52,'#1d2a40');T('o seu jogo. HOJE.',80,y+285,52,'#c13948');T('$ $ $',80,y+380,60,'#2f8f5b');
+  R(0,0,w,h,'#eef1f6');R(0,0,w,70,'#c9d3e2');T('CAIXA DE ENTRADA',450,48,32,'#3a4a63','center');
+  const k=ease(S.slide||0);const y=110+(1-k)*500;R(70,y,760,440,'#ffffff');g.strokeStyle='#c9d3e2';g.lineWidth=3;g.strokeRect(70,y,760,440);
+  T('De: MEGA GAMES S.A.',100,y+60,36,'#3a4a63');T('Assunto: Proposta urgente',100,y+108,34,'#4a5a75');R(100,y+132,700,3,'#dde3ec');
+  T('Queremos comprar',100,y+215,58,'#1d2a40');T('o seu jogo. HOJE.',100,y+290,58,'#c13948');T('$ $ $',100,y+385,60,'#2f8f5b');
  }
  if(sc==='reply'){ // AI answered before you asked
   chatFrame('CHAT COM A IA');
-  const k=ease(S.msg||0);if(k>0){g.globalAlpha=k;bubble('Não vende.\nEu já comecei a parte dois.',40,170+(1-k)*40,700,150,'#2e3f5c','#ffffff',40);g.globalAlpha=1;}
-  T('(você ainda não digitou nada)',450,520,28,'#7f8fa8','center');T(f%16<8?'▌':'',48,654,28,'#e8eef8');
+  const k=ease(S.msg||0);if(k>0){g.globalAlpha=k;bubble('Não vende.\nEu já comecei\na parte dois.',70,140+(1-k)*40,640,210,'#2e3f5c','#ffffff',50);g.globalAlpha=1;}
+  T('(você ainda não digitou nada)',450,450,36,'#9fb0c8','center');T(f%16<8?'▌':'',48,654,28,'#e8eef8');
  }
  if(sc==='choice'){ // vender ou continuar
-  R(0,0,w,h,'#141c2b');T('E AGORA?',450,110,64,'#ffe27a','center');
+  R(0,0,w,h,'#141c2b');T('E AGORA?',450,105,68,'#ffe27a','center');
   const pulse=1+.04*Math.sin(f*.3);
-  R(60,200,370,300,'#2f8f5b');T('$',245,345,130,'#fff','center');T('VENDER',245,445,48*pulse,'#fff','center');
-  R(470,200,370,300,'#3b6fd8');R(565,270,180,80,'#fff');R(590,300,40,14,'#3b6fd8');R(603,287,14,40,'#3b6fd8');R(690,290,16,16,'#3b6fd8');R(712,312,16,16,'#3b6fd8');T('CONTINUAR',655,445,44*pulse,'#fff','center');
-  T(S.cta?'Comenta: a parte 2 depende de você':'Qual você escolhe?',450,585,32,'#e8eef8','center');
+  R(70,170,360,290,'#2f8f5b');T('$',250,310,130,'#fff','center');T('VENDER',250,420,50*pulse,'#fff','center');
+  R(470,170,360,290,'#3b6fd8');R(560,230,180,80,'#fff');R(585,260,40,14,'#3b6fd8');R(598,247,14,40,'#3b6fd8');R(685,250,16,16,'#3b6fd8');R(707,272,16,16,'#3b6fd8');T('CONTINUAR',650,420,46*pulse,'#fff','center');
+  if(S.cta){T('COMENTA AÍ:',450,525,42,'#ffe27a','center');T('a parte 2 depende de você',450,578,40,'#e8eef8','center');}else T('Qual você escolhe?',450,535,46,'#e8eef8','center');
  }
  screenTex.needsUpdate=true;
 }

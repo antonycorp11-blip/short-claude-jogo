@@ -26,12 +26,12 @@ const camKeys=s=>{
   case 1: return [k(a,WIDE),k(b,{...WIDE,pos:[-3,2.35,6.6],fov:44})];          // hook: slow push
   case 2: return [k(a,SCREEN),k(b,{...SCREEN,pos:[-3,2.55,5.6]})];               // the game appears
   case 3: return [k(a,SCREEN),k(b,{...SCREEN,pos:[-3,2.55,5.5]})];               // levels
-  case 4: return [k(a,SCREEN),k(KY.nome-6,{...SCREEN,pos:[-3,2.5,5.4]}),k(KY.nome+4,{...SCREEN,pos:[-3,2.45,5.0],fov:44,roll:2}),k(b,{...SCREEN,pos:[-3,2.45,5.0],fov:44})];
+  case 4: return [k(a,SCREEN),k(KY.nome-6,{...SCREEN,pos:[-3,2.5,5.4]}),k(KY.nome+4,{...SCREEN,pos:[-3,2.45,5.4],roll:2}),k(b,{...SCREEN,pos:[-3,2.45,5.4]})];
   case 5: return [k(a,WIDE),k(b,{...WIDE,pos:[-3,2.3,6.8]})];                    // posts online
   case 6: return [k(a,SCREEN),k(b,{...SCREEN,pos:[-3,2.55,5.3]})];               // 100k
-  case 7: return [k(a,SCREEN),k(b,{...SCREEN,pos:[-3,2.5,5.2]})];                // email
+  case 7: return [k(a,SCREEN),k(b,{...SCREEN,pos:[-3,2.5,5.45]})];                // email
   case 8: return [k(a,CU),k(b,{...CU,pos:[-3,1.95,4.3]})];                       // opens chat (reaction)
-  case 9: return [k(a,SCREEN),k(b,{...SCREEN,pos:[-3,2.45,5.0],roll:-3})];       // AI reply: sting push-in
+  case 9: return [k(a,SCREEN),k(b,{...SCREEN,pos:[-3,2.45,5.4],roll:-2})];       // AI reply: sting push-in
   case 10:return [k(a,WIDE),k(m,{...WIDE,pos:[-3,2.3,6.9]}),k(b,{...WIDE,pos:[-3,2.3,6.9]})]; // choice
   default:return [k(a,SCREEN),k(b,{...SCREEN,pos:[-3,2.55,5.7]})];               // CTA
  }
@@ -69,9 +69,9 @@ export const actorsAt=(f,T)=>{
  if(id===5) you({expr:'smile',R:'thumb',L:'hip'});
  if(id===6) you({expr:'shock',R:'up',L:'up',bob:q(.02*Math.sin(f*.5),2)});
  if(id===7) you({expr:f>=KY.hoje?'shock':'neutral',R:f>=KY.hoje?'cheek':'hang'});
- if(id===8) you({expr:'nervous',R:'temple',swirl:q(f*.2,1)});
+ if(id===8) you({expr:'nervous',R:'cheek'});
  if(id===9) you({expr:'shock',L:'cheek',R:'cheek'});
- if(id===10) you({expr:'squint',R:'temple',swirl:q(f*.15,1)});
+ if(id===10) you({expr:'squint',R:'cheek'});
  if(id===11) you({expr:'smile',R:'point'});
  return out;
 };

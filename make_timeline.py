@@ -98,7 +98,7 @@ def main():
     wav = sys.argv[1]
     dur = float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",wav]).decode())
     from faster_whisper import WhisperModel
-    model = WhisperModel("small", device="cpu", compute_type="int8")
+    model = WhisperModel("base", device="cpu", compute_type="int8")
     segs, _ = model.transcribe(wav, language="pt", word_timestamps=True, initial_prompt=" ".join(SENTS))
     words = [dict(word=w.word.strip(), start=w.start, end=w.end) for s in segs for w in s.words]
     os.makedirs("work", exist_ok=True)

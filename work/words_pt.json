@@ -1,0 +1,677 @@
+[
+ {
+  "word": "Você",
+  "start": 0.0,
+  "end": 0.32
+ },
+ {
+  "word": "nunca",
+  "start": 0.32,
+  "end": 0.78
+ },
+ {
+  "word": "programou",
+  "start": 0.78,
+  "end": 1.38
+ },
+ {
+  "word": "na",
+  "start": 1.38,
+  "end": 1.5
+ },
+ {
+  "word": "vida.",
+  "start": 1.5,
+  "end": 1.96
+ },
+ {
+  "word": "Mas",
+  "start": 2.58,
+  "end": 2.68
+ },
+ {
+  "word": "assinou",
+  "start": 2.68,
+  "end": 3.12
+ },
+ {
+  "word": "o",
+  "start": 3.12,
+  "end": 3.34
+ },
+ {
+  "word": "Claude",
+  "start": 3.34,
+  "end": 3.68
+ },
+ {
+  "word": "e",
+  "start": 3.68,
+  "end": 3.86
+ },
+ {
+  "word": "digitou.",
+  "start": 3.86,
+  "end": 4.4
+ },
+ {
+  "word": "Cria",
+  "start": 4.96,
+  "end": 5.14
+ },
+ {
+  "word": "um",
+  "start": 5.14,
+  "end": 5.34
+ },
+ {
+  "word": "jogo",
+  "start": 5.34,
+  "end": 5.6
+ },
+ {
+  "word": "pra",
+  "start": 5.6,
+  "end": 5.86
+ },
+ {
+  "word": "mim.",
+  "start": 5.86,
+  "end": 6.08
+ },
+ {
+  "word": "Trinta",
+  "start": 6.7,
+  "end": 6.94
+ },
+ {
+  "word": "segundos",
+  "start": 6.94,
+  "end": 7.3
+ },
+ {
+  "word": "depois,",
+  "start": 7.3,
+  "end": 7.8
+ },
+ {
+  "word": "ele",
+  "start": 8.3,
+  "end": 8.46
+ },
+ {
+  "word": "te",
+  "start": 8.46,
+  "end": 8.6
+ },
+ {
+  "word": "entrega",
+  "start": 8.6,
+  "end": 9.02
+ },
+ {
+  "word": "um",
+  "start": 9.02,
+  "end": 9.16
+ },
+ {
+  "word": "jogo",
+  "start": 9.16,
+  "end": 9.42
+ },
+ {
+  "word": "de",
+  "start": 9.42,
+  "end": 9.62
+ },
+ {
+  "word": "nave.",
+  "start": 9.62,
+  "end": 9.96
+ },
+ {
+  "word": "Funcionando.",
+  "start": 10.48,
+  "end": 11.04
+ },
+ {
+  "word": "Você",
+  "start": 11.52,
+  "end": 11.7
+ },
+ {
+  "word": "pede",
+  "start": 11.7,
+  "end": 12.02
+ },
+ {
+  "word": "uma",
+  "start": 12.02,
+  "end": 12.2
+ },
+ {
+  "word": "fase",
+  "start": 12.2,
+  "end": 12.48
+ },
+ {
+  "word": "nova.",
+  "start": 12.48,
+  "end": 12.76
+ },
+ {
+  "word": "Ele",
+  "start": 13.3,
+  "end": 13.42
+ },
+ {
+  "word": "faz",
+  "start": 13.42,
+  "end": 13.6
+ },
+ {
+  "word": "cinco.",
+  "start": 13.6,
+  "end": 14.14
+ },
+ {
+  "word": "Você",
+  "start": 14.56,
+  "end": 14.72
+ },
+ {
+  "word": "pede",
+  "start": 14.72,
+  "end": 15.04
+ },
+ {
+  "word": "um",
+  "start": 15.04,
+  "end": 15.16
+ },
+ {
+  "word": "chefão.",
+  "start": 15.16,
+  "end": 15.68
+ },
+ {
+  "word": "Ele",
+  "start": 16.04,
+  "end": 16.22
+ },
+ {
+  "word": "cria",
+  "start": 16.22,
+  "end": 16.56
+ },
+ {
+  "word": "um",
+  "start": 16.56,
+  "end": 16.74
+ },
+ {
+  "word": "dragão...",
+  "start": 16.74,
+  "end": 17.7
+ },
+ {
+  "word": "que",
+  "start": 17.7,
+  "end": 17.84
+ },
+ {
+  "word": "fala",
+  "start": 17.84,
+  "end": 18.12
+ },
+ {
+  "word": "o",
+  "start": 18.12,
+  "end": 18.3
+ },
+ {
+  "word": "seu",
+  "start": 18.3,
+  "end": 18.4
+ },
+ {
+  "word": "nome.",
+  "start": 18.4,
+  "end": 18.74
+ },
+ {
+  "word": "Empolgado,",
+  "start": 19.28,
+  "end": 19.84
+ },
+ {
+  "word": "você",
+  "start": 20.04,
+  "end": 20.24
+ },
+ {
+  "word": "posta",
+  "start": 20.24,
+  "end": 20.76
+ },
+ {
+  "word": "o",
+  "start": 20.76,
+  "end": 20.86
+ },
+ {
+  "word": "jogo",
+  "start": 20.86,
+  "end": 21.06
+ },
+ {
+  "word": "na",
+  "start": 21.06,
+  "end": 21.24
+ },
+ {
+  "word": "internet.",
+  "start": 21.24,
+  "end": 21.82
+ },
+ {
+  "word": "Mil",
+  "start": 22.34,
+  "end": 22.54
+ },
+ {
+  "word": "pessoas",
+  "start": 22.54,
+  "end": 23.08
+ },
+ {
+  "word": "jogam",
+  "start": 23.08,
+  "end": 23.6
+ },
+ {
+  "word": "na",
+  "start": 23.6,
+  "end": 23.72
+ },
+ {
+  "word": "primeira",
+  "start": 23.72,
+  "end": 24.12
+ },
+ {
+  "word": "hora.",
+  "start": 24.12,
+  "end": 24.56
+ },
+ {
+  "word": "No",
+  "start": 25.04,
+  "end": 25.14
+ },
+ {
+  "word": "dia",
+  "start": 25.14,
+  "end": 25.32
+ },
+ {
+  "word": "seguinte,",
+  "start": 25.32,
+  "end": 25.66
+ },
+ {
+  "word": "cem",
+  "start": 26.2,
+  "end": 26.36
+ },
+ {
+  "word": "mil.",
+  "start": 26.36,
+  "end": 26.68
+ },
+ {
+  "word": "Até",
+  "start": 27.18,
+  "end": 27.42
+ },
+ {
+  "word": "que",
+  "start": 27.42,
+  "end": 27.6
+ },
+ {
+  "word": "chega",
+  "start": 27.6,
+  "end": 27.84
+ },
+ {
+  "word": "um",
+  "start": 27.84,
+  "end": 28.04
+ },
+ {
+  "word": "e",
+  "start": 28.04,
+  "end": 28.16
+ },
+ {
+  "word": "-mail",
+  "start": 28.16,
+  "end": 28.42
+ },
+ {
+  "word": "de",
+  "start": 28.42,
+  "end": 28.56
+ },
+ {
+  "word": "uma",
+  "start": 28.56,
+  "end": 28.68
+ },
+ {
+  "word": "empresa",
+  "start": 28.68,
+  "end": 29.02
+ },
+ {
+  "word": "gigante",
+  "start": 29.02,
+  "end": 29.74
+ },
+ {
+  "word": "de",
+  "start": 29.74,
+  "end": 29.94
+ },
+ {
+  "word": "games.",
+  "start": 29.94,
+  "end": 29.98
+ },
+ {
+  "word": "Queremos",
+  "start": 29.98,
+  "end": 31.14
+ },
+ {
+  "word": "comprar",
+  "start": 31.14,
+  "end": 31.62
+ },
+ {
+  "word": "o",
+  "start": 31.62,
+  "end": 31.82
+ },
+ {
+  "word": "seu",
+  "start": 31.82,
+  "end": 31.94
+ },
+ {
+  "word": "jogo.",
+  "start": 31.94,
+  "end": 32.32
+ },
+ {
+  "word": "Hoje.",
+  "start": 32.78,
+  "end": 33.08
+ },
+ {
+  "word": "Você",
+  "start": 33.64,
+  "end": 33.88
+ },
+ {
+  "word": "abre",
+  "start": 33.88,
+  "end": 34.22
+ },
+ {
+  "word": "o",
+  "start": 34.22,
+  "end": 34.38
+ },
+ {
+  "word": "Claude",
+  "start": 34.38,
+  "end": 34.68
+ },
+ {
+  "word": "pra",
+  "start": 34.68,
+  "end": 34.86
+ },
+ {
+  "word": "pedir",
+  "start": 34.86,
+  "end": 35.14
+ },
+ {
+  "word": "conselho...",
+  "start": 35.14,
+  "end": 36.18
+ },
+ {
+  "word": "e",
+  "start": 36.18,
+  "end": 36.24
+ },
+ {
+  "word": "ele",
+  "start": 36.24,
+  "end": 36.38
+ },
+ {
+  "word": "já",
+  "start": 36.38,
+  "end": 36.64
+ },
+ {
+  "word": "te",
+  "start": 36.64,
+  "end": 36.82
+ },
+ {
+  "word": "respondeu",
+  "start": 36.82,
+  "end": 37.36
+ },
+ {
+  "word": "antes",
+  "start": 37.36,
+  "end": 37.74
+ },
+ {
+  "word": "de",
+  "start": 37.74,
+  "end": 37.92
+ },
+ {
+  "word": "você",
+  "start": 37.92,
+  "end": 38.14
+ },
+ {
+  "word": "perguntar.",
+  "start": 38.14,
+  "end": 38.82
+ },
+ {
+  "word": "Não",
+  "start": 39.2,
+  "end": 39.4
+ },
+ {
+  "word": "vende.",
+  "start": 39.4,
+  "end": 39.76
+ },
+ {
+  "word": "Eu",
+  "start": 40.16,
+  "end": 40.24
+ },
+ {
+  "word": "já",
+  "start": 40.24,
+  "end": 40.38
+ },
+ {
+  "word": "comecei",
+  "start": 40.38,
+  "end": 40.84
+ },
+ {
+  "word": "a",
+  "start": 40.84,
+  "end": 40.9
+ },
+ {
+  "word": "parte",
+  "start": 40.9,
+  "end": 41.12
+ },
+ {
+  "word": "dois.",
+  "start": 41.12,
+  "end": 41.4
+ },
+ {
+  "word": "E",
+  "start": 42.08,
+  "end": 42.24
+ },
+ {
+  "word": "agora?",
+  "start": 42.24,
+  "end": 42.52
+ },
+ {
+  "word": "Você",
+  "start": 43.1,
+  "end": 43.3
+ },
+ {
+  "word": "vende",
+  "start": 43.3,
+  "end": 43.68
+ },
+ {
+  "word": "o",
+  "start": 43.68,
+  "end": 43.8
+ },
+ {
+  "word": "jogo",
+  "start": 43.8,
+  "end": 44.2
+ },
+ {
+  "word": "e",
+  "start": 44.2,
+  "end": 44.3
+ },
+ {
+  "word": "fica",
+  "start": 44.3,
+  "end": 44.56
+ },
+ {
+  "word": "rico...",
+  "start": 44.56,
+  "end": 45.44
+ },
+ {
+  "word": "ou",
+  "start": 45.44,
+  "end": 45.56
+ },
+ {
+  "word": "confia",
+  "start": 45.56,
+  "end": 46.06
+ },
+ {
+  "word": "na",
+  "start": 46.06,
+  "end": 46.24
+ },
+ {
+  "word": "IA",
+  "start": 46.24,
+  "end": 46.62
+ },
+ {
+  "word": "e",
+  "start": 46.62,
+  "end": 46.9
+ },
+ {
+  "word": "continua",
+  "start": 46.9,
+  "end": 47.36
+ },
+ {
+  "word": "criando?",
+  "start": 47.36,
+  "end": 47.92
+ },
+ {
+  "word": "Comenta",
+  "start": 48.34,
+  "end": 48.74
+ },
+ {
+  "word": "aí.",
+  "start": 48.74,
+  "end": 48.96
+ },
+ {
+  "word": "Vender",
+  "start": 49.42,
+  "end": 49.76
+ },
+ {
+  "word": "ou",
+  "start": 49.76,
+  "end": 50.2
+ },
+ {
+  "word": "continuar.",
+  "start": 50.2,
+  "end": 50.76
+ },
+ {
+  "word": "A",
+  "start": 51.28,
+  "end": 51.4
+ },
+ {
+  "word": "parte",
+  "start": 51.4,
+  "end": 51.68
+ },
+ {
+  "word": "dois",
+  "start": 51.68,
+  "end": 52.06
+ },
+ {
+  "word": "depende",
+  "start": 52.06,
+  "end": 52.68
+ },
+ {
+  "word": "de",
+  "start": 52.68,
+  "end": 53.0
+ },
+ {
+  "word": "você.",
+  "start": 53.0,
+  "end": 53.3
+ }
+]
