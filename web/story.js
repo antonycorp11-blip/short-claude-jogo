@@ -30,9 +30,9 @@ const camKeys=s=>{
   case 5: return [k(a,WIDE),k(b,{...WIDE,pos:[-3,2.3,6.8]})];                    // posts online
   case 6: return [k(a,SCREEN),k(b,{...SCREEN,pos:[-3,2.55,5.3]})];               // 100k
   case 7: return [k(a,SCREEN),k(b,{...SCREEN,pos:[-3,2.5,5.45]})];                // email
-  case 8: return [k(a,CU),k(b,{...CU,pos:[-3,1.95,4.3]})];                       // opens chat (reaction)
+  case 8: return [k(a,{...SCREEN,pos:[-3,2.5,6.3]}),k(b,{...SCREEN,pos:[-3,2.5,5.8]})];                       // opens chat (reaction)
   case 9: return [k(a,SCREEN),k(b,{...SCREEN,pos:[-3,2.45,5.4],roll:-2})];       // AI reply: sting push-in
-  case 10:return [k(a,WIDE),k(m,{...WIDE,pos:[-3,2.3,6.9]}),k(b,{...WIDE,pos:[-3,2.3,6.9]})]; // choice
+  case 10:return [k(a,{...SCREEN,pos:[-3,2.5,6.2]}),k(b,{...SCREEN,pos:[-3,2.5,5.7]})]; // choice
   default:return [k(a,SCREEN),k(b,{...SCREEN,pos:[-3,2.55,5.7]})];               // CTA
  }
 };
@@ -40,16 +40,16 @@ export const camAt=f=>{
  const s=shotAt(f),c=camFromKeys(camKeys(s),f,{kicks:[{f:KY.nome,a:.04},{f:KY.cemmil,a:.04},{f:KY.parte2,a:.06}]});
  c.flash=0; return c;
 };
-export const dofAt=f=>{const s=shotAt(f);return {focus:s.id===8?2.4:5.5,cinf:s.id===8?9:4,near:1};};
+export const dofAt=f=>{const s=shotAt(f);return {focus:5.5,cinf:4,near:1};};
 const P=(f,a,b)=>clamp((f-a)/Math.max(1,b-a));
 export const worldAt=f=>{
  const s=shotAt(f),id=s.id;
  const w={mine:[0,0,0,0,0,0],rh:0,chairs:0,f};
  if(id===1){w.screen='chat';w.typing=P(f,KY.digitou-10,KY.digitou+40);w.reply=0;}
  else if(id===2){w.screen=f<KY.nave-4?'chat':'game';w.typing=1;w.reply=P(f,s.a,s.a+15);}
- else if(id===3){w.screen='levels';w.pops=P(f,KY.cinco-14,KY.cinco+6);}
+ else if(id===3){w.screen='levels';w.first=P(f,s.a+4,s.a+14);w.pops=P(f,KY.cinco-12,KY.cinco+6);}
  else if(id===4){w.screen='dragon';w.enter=P(f,KY.dragao-20,KY.dragao+4);w.talk=f>=KY.nome-3?1:0;}
- else if(id===5){w.screen='posted';w.count=P(f,KY.mil-25,KY.mil+20);}
+ else if(id===5){w.screen='posted';w.count=P(f,s.a+8,KY.mil+4);}
  else if(id===6){w.screen='viral';w.count=P(f,s.a,KY.cemmil+4);}
  else if(id===7){w.screen='email';w.slide=P(f,KY.email-12,KY.email+6);}
  else if(id===8){w.screen='chat';w.typing=0;}

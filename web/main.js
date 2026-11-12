@@ -139,7 +139,7 @@ function drawScreen(S,f){
  }
  if(sc==='levels'){ // 1 level requested, 5 pop in
   R(0,0,w,h,'#101a33');T('SELECIONE A FASE',450,110,52,'#ffe27a','center');
-  for(let i=0;i<5;i++){const k=ease((S.pops||0)*5-i);if(k<=0)continue;const x=95+i*150,y=300,s=110*k;R(x+55-s/2,y+55-s/2,s,s,['#3fa7ff','#38c98a','#f2b03a','#e2577a','#9b6bff'][i]);if(k>.6)T(String(i+1),x+55,y+75,54,'#fff','center');}
+  for(let i=0;i<5;i++){const k=i===0?ease(S.first||0):ease((S.pops||0)*4-(i-1));if(k<=0)continue;const x=95+i*150,y=300,s=110*k;R(x+55-s/2,y+55-s/2,s,s,['#3fa7ff','#38c98a','#f2b03a','#e2577a','#9b6bff'][i]);if(k>.6)T(String(i+1),x+55,y+75,54,'#fff','center');}
   if((S.pops||0)>.2)T('Você pediu 1. A IA fez 5.',450,540,46,'#ffffff','center');
  }
  if(sc==='dragon'){ // boss that says your name
